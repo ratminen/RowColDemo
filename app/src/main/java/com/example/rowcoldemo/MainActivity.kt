@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.paddingFrom
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Scaffold
@@ -20,8 +19,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.FirstBaseline
-import androidx.compose.ui.layout.LastBaseline
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,15 +42,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Row {
-        TextCell("1", Modifier.weight(weight = 0.2f, fill = true))
-        TextCell("2", Modifier.weight(weight = 0.4f, fill = true))
-        TextCell("3", Modifier.weight(weight = 0.3f, fill = true))
+    Row(modifier.size(width = 400.dp, height = 200.dp)) {
+        TextCell("1")
+        TextCell("2")
+        TextCell("3")
     }
 }
 
 
-@Preview(showBackground = true)
+    @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     RowColDemoTheme {
